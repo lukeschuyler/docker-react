@@ -1,8 +1,8 @@
 FROM node:alpine as builder
 WORKDIR '/app'
-COPY package*.json ./
+COPY package.json .
 RUN npm install
-COPY ./ ./ 
+COPY . app/ 
 CMD ["npm", "run", "build"]
 
 # SECOND STEP FOR PROD, NO DEV SERVER
